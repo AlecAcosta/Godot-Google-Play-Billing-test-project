@@ -24,5 +24,6 @@ Add the product id's
 
 To purchase just call the autoload **GooglePB.payment.purchase("your product id")**
 Add a Node to a group called **"gpb listener"** so it can listen the Plugin when a purchase is made
+
 In your node added to the "gpb listener" group make a function called **_on_purchase_successful(_product_id)**
 This function gets called automatically when a purchase is successfully made, there you can grant the purchased product using it's id
