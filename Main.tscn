@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Anton-Regular small.tres" type="DynamicFont" id=2]
+
+[node name="Main" type="Control" groups=["gpb listener"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.66968
+margin_top = 0.667359
+margin_right = 2.66968
+margin_bottom = 0.667358
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 72.0
+margin_right = 648.0
+margin_bottom = 1280.0
+rect_min_size = Vector2( 576, 1280 )
+custom_constants/separation = 24
+
+[node name="LabelCoins" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 576.0
+margin_bottom = 73.0
+text = "coins: 0"
+
+[node name="LabelStatus" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 97.0
+margin_right = 576.0
+margin_bottom = 170.0
+text = "no premium"
+
+[node name="Purchase" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 194.0
+margin_right = 576.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 288, 144 )
+text = "Buy premium"
+
+[node name="Revoke" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 362.0
+margin_right = 576.0
+margin_bottom = 506.0
+rect_min_size = Vector2( 288, 144 )
+text = "Revoke premium"
+
+[node name="PurchaseConsumable" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 530.0
+margin_right = 576.0
+margin_bottom = 674.0
+rect_min_size = Vector2( 288, 144 )
+text = "Buy 100 coins"
+
+[node name="LabelOutput" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 698.0
+margin_right = 576.0
+margin_bottom = 1280.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+autowrap = true
+clip_text = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Purchase" to="." method="_on_Purchase_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Revoke" to="." method="_on_Revoke_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PurchaseConsumable" to="." method="_on_PurchaseConsumable_pressed"]
